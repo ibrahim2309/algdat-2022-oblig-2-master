@@ -64,10 +64,20 @@ public class DobbeltLenketListe<T> implements Liste<T> {
                 }
             }
             hale = hode; //Siden det er bare en node så er hode og hale samme.
+            if (hode != null) {     //Lager resten av listen
+                i++;
+                for (; i < a.length; i++) {
+                    if (a[i] != null) {
 
-
+                        hale.neste = new Node<>(a[i], hale, null);
+                        hale = hale.neste;
+                        antall++;
+                    }
+                }
+            }
         }
     }
+
 
     public Liste<T> subliste(int fra, int til) {
         throw new UnsupportedOperationException();
