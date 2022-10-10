@@ -1065,7 +1065,7 @@ class Oblig2Test {
         }
 
         i = liste.iterator();
-        liste.fjern(Integer.valueOf(8));  // bruker fjern(T) etter at iteratoren er opprettet
+        liste.fjern((8));  // bruker fjern(T) etter at iteratoren er opprettet
 
         try {
             i.next();
