@@ -188,6 +188,12 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             hale = hale.neste;
         }
 
+        else { //Legger til verdien midt i lisen
+            Node<T> p = finnNode(indeks-1);
+            Node<T> n = p.neste;
+            p.neste = new Node<>(verdi, p, p.neste); //Legger til verdi mellom p og p.neste
+            n.forrige = p.neste;
+        }
         antall++;
         endringer++;
     }
