@@ -148,7 +148,7 @@ class Oblig2Test {
 
         DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
 
-        if (liste.leggInn(1) != true) {
+        if (!liste.leggInn(1)) {
             antallFeil++;
             System.out.println
                     ("Oppgave 2a: leggInn-metoden skal returnere true her!");
@@ -1034,6 +1034,8 @@ class Oblig2Test {
             k++;
         }
 
+        System.out.println("her");
+
         i = liste.iterator();
         liste.fjern(0); // bruker fjern(indeks) etter at iteratoren er opprettet
 
@@ -1065,7 +1067,7 @@ class Oblig2Test {
         }
 
         i = liste.iterator();
-        liste.fjern((8));  // bruker fjern(T) etter at iteratoren er opprettet
+        liste.fjern(new Integer(8));  // bruker fjern(T) etter at iteratoren er opprettet
 
         try {
             i.next();
@@ -1078,7 +1080,7 @@ class Oblig2Test {
                 antallFeil++;
             }
         }
-
+        System.out.println("her2");
         i = liste.iterator();
         liste.leggInn(0, 1);  // bruker leggInn(indeks,T) etter at iteratoren er opprettet
 
